@@ -6,15 +6,13 @@
 /*   By: soamara <soamara@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 11:43:44 by soamara           #+#    #+#             */
-/*   Updated: 2025/06/25 11:43:44 by soamara          ###   ########.fr       */
+/*   Updated: 2025/07/21 17:54:54 by soamara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "push_swap.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include "push_swap.h"
 t_node *new_node(int value)
 {
     t_node *node;
@@ -103,27 +101,4 @@ void	index_stack(t_node *stack)
         if(min_node)
             min_node->index = i++;
     }
-}
-
-int main(void)
-{
-    t_node *stack = NULL;
-
-    // Création manuelle de la pile : 42 -> 10 -> 5 -> 100
-    add_back(&stack, new_node(42));
-    add_back(&stack, new_node(10));
-    add_back(&stack, new_node(5));
-    add_back(&stack, new_node(100));
-
-    // Indexation
-    index_stack(stack);
-    // Affichage pour vérifier les index
-    t_node *tmp = stack;
-    while (tmp)
-    {
-        printf("Value: %d | Index: %d\n", tmp->value, tmp->index);
-        tmp = tmp->next;
-    }
-
-    return 0;
 }
