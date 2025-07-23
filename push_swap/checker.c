@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soamara <soamara@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sofiane <sofiane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 12:20:21 by soamara           #+#    #+#             */
-/*   Updated: 2025/07/21 17:55:02 by soamara          ###   ########.fr       */
+/*   Updated: 2025/07/23 17:54:48 by sofiane          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_is_numeric(char  *str)
+int is_numeric(char *str)
 {
     int i;
 
     i = 0;
-    if(str[i] == '-'|| str[i] == '+')
+    if(str[i] == '-' || str[i] == '+')
         i++;
     if(!str[i])
         return(0);
@@ -29,62 +29,78 @@ int ft_is_numeric(char  *str)
     }
     return(1);
 }
-int	has_duplicates(t_node *stack)
+long long	ft_atol(const char *str)
 {
-	t_node *current;
-	t_node *runner;
+	long long	res;
+	int			sign;
+	int			i;
 
-	current = stack;
-	while (current)
+	res = 0;
+	sign = 1;
+	i = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		runner = current->next;
-		while (runner)
-		{
-			if (runner->value == current->value)
-				return (1);
-			runner = runner->next;
-		}
-		current = current->next;
-	}
-	return (0);
-}
-
-
-int	is_in_int_range(char *str)
-{
-	long long n;
-	int sign = 1;
-	int i = 0;
-
-	if (str[0] == '-' || str[0] == '+')
-	{
-		if (str[0] == '-')
+		if (str[i] == '-')
 			sign = -1;
 		i++;
 	}
-	n = 0;
-	while (str[i])
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (str[i] < '0' || str[i] > '9')
-			return (0);
-		n = n * 10 + (str[i] - '0');
-		if (sign * n > INT_MAX || sign * n < INT_MIN)
-			return (0);
+		res = res * 10 + (str[i] - '0');
 		i++;
 	}
+	return (res * sign);
+}
+
+int	is_int_range(char *str)
+{
+	long long	nb;
+
+	nb = ft_atol(str);
+	if (nb < -2147483648 || nb > 2147483647)
+		return (0);
 	return (1);
 }
 
-int all_args_are_num(int argc, char **argv)
+int has_duplicates(t_node *stack)
 {
-    int i;
+    t_node *current;
+    t_node *checker;
 
-    i = 1;
-    while(i < argc)
+    current = stack;
+    while(current)
     {
-        if(!ft_is_numeric(argv[i]))
-            return(0);
-        i++;
+        checker = current->next;
+        while(checker)
+        {
+            if(current->value == checker ->value)
+                return(1);
+            checker = checker ->next;
+        }
+        current = current ->next;
     }
-    return(1);
+    return(0);
+}
+
+void	free_stack(t_node *stack)
+{
+    t_node  *tmp;
+    
+    while (stack)
+    {
+        tmp = stack ->next;
+        free(stack);
+        stack = tmp;
+    }
+    
+}
+
+int	is_sorted(t_node *stack)
+{
+
+    t_node  *check;
+    
+
 }
