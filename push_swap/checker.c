@@ -6,7 +6,11 @@
 /*   By: sofiane <sofiane@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 12:20:21 by soamara           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2025/07/23 17:54:48 by sofiane          ###   ########.fr       */
+=======
+/*   Updated: 2025/07/24 17:56:51 by soamara          ###   ########.fr       */
+>>>>>>> b554dae (***)
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +23,7 @@ int is_numeric(char *str)
     i = 0;
     if(str[i] == '-' || str[i] == '+')
         i++;
-    if(!str[i])
+    if(!str[i]) // si apres signe y a r
         return(0);
     while(str[i])
     {
@@ -94,13 +98,4 @@ void	free_stack(t_node *stack)
         free(stack);
         stack = tmp;
     }
-    
-}
-
-int	is_sorted(t_node *stack)
-{
-
-    t_node  *check;
-    
-
 }
