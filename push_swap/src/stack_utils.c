@@ -6,12 +6,12 @@
 /*   By: soamara <soamara@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 11:43:44 by soamara           #+#    #+#             */
-/*   Updated: 2025/07/21 17:54:54 by soamara          ###   ########.fr       */
+/*   Updated: 2025/07/25 21:10:19 by soamara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 t_node *new_node(int value)
 {
@@ -55,7 +55,11 @@ t_node	*init_stack_from_args(int argc, char **argv)
     i = 1;
     while (i < argc)
     {
+        if(!is_int_range(argv[i]))
+            return(free_stack(stack), NULL); // il faut free la memoire ici
         node = new_node(atoi(argv[i]));
+        if(!node)
+            return(free_stack(stack), NULL);
         add_back(&stack, node);
         i++;
     }

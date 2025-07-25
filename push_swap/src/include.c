@@ -6,11 +6,11 @@
 /*   By: soamara <soamara@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/01 16:52:15 by soamara           #+#    #+#             */
-/*   Updated: 2025/07/21 17:55:00 by soamara          ###   ########.fr       */
+/*   Updated: 2025/07/25 21:00:27 by soamara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 int	ft_atoi(const char *str)
 {

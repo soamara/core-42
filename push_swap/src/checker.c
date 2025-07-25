@@ -3,18 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sofiane <sofiane@student.42.fr>            +#+  +:+       +#+        */
+/*   By: soamara <soamara@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 12:20:21 by soamara           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2025/07/23 17:54:48 by sofiane          ###   ########.fr       */
-=======
-/*   Updated: 2025/07/24 17:56:51 by soamara          ###   ########.fr       */
->>>>>>> b554dae (***)
+/*   Updated: 2025/07/25 21:00:30 by soamara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../include/push_swap.h"
 
 int is_numeric(char *str)
 {

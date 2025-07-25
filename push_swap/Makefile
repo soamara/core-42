@@ -6,25 +6,29 @@
 #    By: soamara <soamara@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/25 13:53:08 by soamara           #+#    #+#              #
-#    Updated: 2025/07/21 17:54:59 by soamara          ###   ########.fr        #
+#    Updated: 2025/07/25 21:03:21 by soamara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-CC = gcc 
-RM = -rf
-FLAGS = -Wall -Wextra -Werror
+CC = gcc
+RM = rm -rf
+FLAGS = -Wall -Wextra -Werror -Iinclude
 
-SRC     = push_swap.c \
-          stack_utils.c \
-          checker.c \
-		  include.c \
-          index_stack.c 
+SRC = src/push_swap.c \
+      src/stack_utils.c \
+      src/checker.c \
+      src/include.c \
+      src/op_push.c \
+      src/op_revrotate.c \
+      src/op_rotate.c \
+      src/op_swap.c \
+      src/sort_3.c
 
-OBJ     = $(SRC:.c=.o)
+OBJ = $(SRC:.c=.o)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
 all: $(NAME)
 
