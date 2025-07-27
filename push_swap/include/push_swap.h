@@ -6,7 +6,7 @@
 /*   By: soamara <soamara@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 12:12:55 by soamara           #+#    #+#             */
-/*   Updated: 2025/07/25 21:24:28 by soamara          ###   ########.fr       */
+/*   Updated: 2025/07/27 13:48:06 by soamara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,12 @@ void    add_back(t_node **stack, t_node *new);
 void	free_stack(t_node *stack);
 void    sort_3(t_node **a);
 void print_stack(t_node *stack);
-int is_sorted(t_node *stack);
+void radix_sort(t_node **a, t_node **b);
 
+int is_sorted(t_node *stack);
 int ft_atoi(const char *str);
 int	has_unindexed(t_node *stack);
-int ft_is_numeric(char  *str);
+int is_numeric(char  *str);
 int	is_int_range(char *str);
 int	has_duplicates(t_node *stack);
 int all_args_are_num(int argc, char **argv);
@@ -64,4 +65,8 @@ void   sa(t_node **A);
 void    sb(t_node **B);
 int    ss(t_node **A, t_node **B);
 
+int find_pos(t_node *stack, int index);
+void sort_5(t_node **a, t_node **b);
+int	stack_size(t_node *stack);
+void    sort_4(t_node   **a, t_node **b);
 #endif
