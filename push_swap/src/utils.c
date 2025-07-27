@@ -6,7 +6,7 @@
 /*   By: soamara <soamara@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 16:14:06 by soamara           #+#    #+#             */
-/*   Updated: 2025/07/27 17:05:17 by soamara          ###   ########.fr       */
+/*   Updated: 2025/07/27 17:40:19 by soamara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ int	all_args_are_num(int argc, char **argv)
 	while (i < argc)
 	{
 		if (!is_numeric(argv[i]))
+			return (0);
+		if(!is_int_range(argv[i]))
 			return (0);
 		i++;
 	}
