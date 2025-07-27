@@ -6,7 +6,7 @@
 /*   By: soamara <soamara@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 16:15:48 by soamara           #+#    #+#             */
-/*   Updated: 2025/07/27 16:54:25 by soamara          ###   ########.fr       */
+/*   Updated: 2025/07/27 18:14:36 by soamara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	index_stack(t_node *stack)
 		lower = 2147483647;
 		while (tmp)
 		{
-			if (lower > tmp->value && tmp->index == -1)
+			if (lower >= tmp->value && tmp->index == -1)
 			{
 				lower = tmp->value;
 				min_node = tmp;

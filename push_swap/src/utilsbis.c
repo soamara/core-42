@@ -6,7 +6,7 @@
 /*   By: soamara <soamara@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 11:43:44 by soamara           #+#    #+#             */
-/*   Updated: 2025/07/27 17:10:00 by soamara          ###   ########.fr       */
+/*   Updated: 2025/07/27 18:55:39 by soamara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,10 @@ t_node	*init_stack_from_args(int argc, char **argv)
 	while (i < argc)
 	{
 		if (!is_int_range(argv[i]))
-			return (free_stack(stack), NULL);
+			return (NULL);
 		node = new_node(atoi(argv[i]));
 		if (!node)
-			return (free_stack(stack), NULL);
+			return (NULL);
 		add_back(&stack, node);
 		i++;
 	}
